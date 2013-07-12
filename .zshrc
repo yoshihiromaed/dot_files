@@ -96,3 +96,7 @@ function history-all { history -E 1 }
 #先方予想
 autoload predict-on
 predict-on
+#alias
+alias ls="ls -la"
+alias -g L="| less"
+alias -g G="| grep"
