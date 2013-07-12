@@ -1,0 +1,7 @@
+#source defaults
+zombie 
+bind w windowlist -b
+hardstatus string "%?%h%:%t (screen #%n on %H)%?"
+caption always "%{=r dd}%-Lw%40L>%?%F%{=b dR}%:[%? %n%f %t %?%F%{-}%:]%?%+Lw"
+sorendition "+rb .G"
+
