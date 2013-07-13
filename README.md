@@ -1,4 +1,4 @@
 dot_files
 =========
 
-.zshrc, .screenrc
+.zshrc, .screenrc, .gitignore

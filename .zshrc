@@ -100,3 +100,14 @@ predict-on
 alias ls="ls -la"
 alias -g L="| less"
 alias -g G="| grep"
+
+#コマンドライン空でEnter入力の場合lsを実行
+alls() {
+  zle accept-line
+  if [[ -z "$BUFFER" ]]; then
+    echo ''
+    ls
+  fi
+}
+zle -N alls
+bindkey "\C-m" alls
