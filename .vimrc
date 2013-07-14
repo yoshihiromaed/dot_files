@@ -58,3 +58,19 @@ endif
 "挿入モード時、ステータスラインの色を変更
 "end
 """"""""""""""""""""""""""""""
+set nocompatible
+filetype plugin indent off
+ 
+if has('vim_starting')
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
+  call neobundle#rc(expand('~/.vim/bundle/'))
+endif
+ 
+"NeoBundle
+NeoBundleFetch 'Shougo/neobundle.vim'
+NeoBundle 'Shougo/vimproc'
+"以下、インストールするプラグインのリポジトリを必要に応じて追記
+NeoBundle 'Shougo/vimfiler'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/vimshell'
+filetype plugin indent on
