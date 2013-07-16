@@ -135,3 +135,4 @@ else
 	let g:Tex_ViewRule_ps = '/usr/bin/open'
 	let g:Tex_ViewRule_dvi = '/usr/bin/open'
 endif
+

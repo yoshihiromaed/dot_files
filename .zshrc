@@ -100,6 +100,7 @@ predict-on
 alias ls="ls -la"
 alias -g L="| less"
 alias -g G="| grep"
+alias ss="screen"
 
 #コマンドライン空でEnter入力の場合lsを実行
 alls() {
