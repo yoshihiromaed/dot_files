@@ -76,8 +76,13 @@ set nocompatible
 filetype plugin indent off
  
 if has('vim_starting')
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
-  call neobundle#rc(expand('~/.vim/bundle/'))
+	if has('win32') || has('win64')
+		set runtimepath+=~/vimfiles/bundle/neobundle.vim/
+		call neobundle#rc(expand('~/vimfiles/bundle/'))
+	else
+		set runtimepath+=~/.vim/bundle/neobundle.vim/
+		call neobundle#rc(expand('~/.vim/bundle/'))
+	endif
 endif
  
 "NeoBundle
@@ -88,7 +93,7 @@ NeoBundle 'Shougo/vimfiler'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimshell'
 NeoBundle 'sandeepcr529/Buffet.vim'
-NeoBundle 'git://git.code.sf.net/p/vim-latex/vim-latex'
+NeoBundle 'git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex'
 filetype plugin indent on
 
 
