@@ -93,9 +93,11 @@ NeoBundle 'Shougo/vimfiler'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimshell'
 NeoBundle 'sandeepcr529/Buffet.vim'
-NeoBundle 'git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex'
+NeoBundle 'git://git.code.sf.net/p/vim-latex/vim-latex'
 filetype plugin indent on
 
+call vimfiler#set_execute_file('vim', 'gvim')
+call vimfiler#set_execute_file('txt', 'gvim')
 
 """"""""""""""""""""""""""
 "vim-latex
@@ -112,12 +114,24 @@ let g:Tex_DefaultTargetFormat = 'pdf'
 let g:Tex_FormatDependency_pdf = 'pdf'
 let g:Tex_FormatDependency_pdf = 'dvi,pdf'
 let g:Tex_FormatDependency_ps = 'dvi,ps'
-let g:Tex_CompileRule_pdf = '/usr/texbin/simpdftex platex --mode dvipdfmx --dvipdfmopts "-p a4" --maxpfb --extratexopts "-file-line-error -synctex=1" $*'
-let g:Tex_CompileRule_ps = '/usr/texbin/dvips -Ppdf -o $*.ps $*.dvi'
-let g:Tex_CompileRule_dvi = '/usr/texbin/platex -synctex=1 -interaction=nonstopmode -file-line-error-style $*'
-let g:Tex_BibtexFlavor = '/usr/texbin/pbibtex'
-let g:Tex_MakeIndexFlavor = '/usr/texbin/mendex $*.idx'
-let g:Tex_UseEditorSettingInDVIViewer = 1
-let g:Tex_ViewRule_pdf = '/usr/bin/open -a Skim.app'
-let g:Tex_ViewRule_ps = '/usr/bin/open'
-let g:Tex_ViewRule_dvi = '/usr/bin/open'
+if has('win32') || has('win64')
+	let g:Tex_CompileRule_pdf = '/usr/texbin/simpdftex platex --mode dvipdfmx --dvipdfmopts "-p a4" --maxpfb --extratexopts "-file-line-error -synctex=1" $*'
+	let g:Tex_CompileRule_ps = '/usr/texbin/dvips -Ppdf -o $*.ps $*.dvi'
+	let g:Tex_CompileRule_dvi = '/usr/texbin/platex -synctex=1 -interaction=nonstopmode -file-line-error-style $*'
+	let g:Tex_BibtexFlavor = '/usr/texbin/pbibtex'
+	let g:Tex_MakeIndexFlavor = '/usr/texbin/mendex $*.idx'
+	let g:Tex_UseEditorSettingInDVIViewer = 1
+	let g:Tex_ViewRule_pdf = '/usr/bin/open -a Skim.app'
+	let g:Tex_ViewRule_ps = '/usr/bin/open'
+	let g:Tex_ViewRule_dvi = '/usr/bin/open'
+else
+	let g:Tex_CompileRule_pdf = '/usr/texbin/simpdftex platex --mode dvipdfmx --dvipdfmopts "-p a4" --maxpfb --extratexopts "-file-line-error -synctex=1" $*'
+	let g:Tex_CompileRule_ps = '/usr/texbin/dvips -Ppdf -o $*.ps $*.dvi'
+	let g:Tex_CompileRule_dvi = '/usr/texbin/platex -synctex=1 -interaction=nonstopmode -file-line-error-style $*'
+	let g:Tex_BibtexFlavor = '/usr/texbin/pbibtex'
+	let g:Tex_MakeIndexFlavor = '/usr/texbin/mendex $*.idx'
+	let g:Tex_UseEditorSettingInDVIViewer = 1
+	let g:Tex_ViewRule_pdf = '/usr/bin/open -a Skim.app'
+	let g:Tex_ViewRule_ps = '/usr/bin/open'
+	let g:Tex_ViewRule_dvi = '/usr/bin/open'
+endif
