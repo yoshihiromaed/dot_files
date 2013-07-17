@@ -3,7 +3,7 @@ compinit
 # 環境変数LANG
 export LANG=ja_JP.UTF-8
 typeset -U PATH CDPATH FPATH MANPATH
-export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/texbin
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/texbin
 export MANPATH=/usr/local/man:/usr/texbin/man:$MANPATH
 # プロンプトの設定(カレントディレクトリを右に)
 PROMPT="%% "

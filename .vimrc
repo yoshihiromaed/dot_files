@@ -101,6 +101,7 @@ NeoBundle 'git://git.code.sf.net/p/vim-latex/vim-latex'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'gregsexton/gitv'
+NeoBundle 'Shougo/unite-ssh'
 filetype plugin indent on
 
 call vimfiler#set_execute_file('vim', 'gvim')
