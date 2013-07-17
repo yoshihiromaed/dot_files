@@ -6,6 +6,10 @@ set hlsearch
 set number
 "シンタックスに色をつける
 syntax on
+"カーソルを行頭、行末で止まらないようにする
+set nocompatible
+set whichwrap=b,s,h,l,<,>,[,]
+let loaded_gzip = 1
 " .vimrcを開く
 nnoremap <Space>.  :<C-u>edit $MYVIMRC<CR>
 " source ~/.vimrc を実行する。
@@ -29,7 +33,8 @@ let g:unite_source_file_mru_limit = 300
 nnoremap <silent><Space>m    :Unite file_mru<CR>
 " バッファリスト
 nnoremap <silent><Space>l    :Unite buffer<CR>
-
+"タブの切り替え
+nmap <C-A>	gt
 """"""""""""""""""""""""""""""
 "挿入モード時、ステータスラインの色を変更
 "start
@@ -37,42 +42,41 @@ nnoremap <silent><Space>l    :Unite buffer<CR>
 let g:hi_insert = 'highlight StatusLine guifg=darkblue guibg=darkyellow gui=none ctermfg=blue ctermbg=yellow cterm=none'
 
 if has('syntax')
-  augroup InsertHook
-    autocmd!
-    autocmd InsertEnter * call s:StatusLine('Enter')
-    autocmd InsertLeave * call s:StatusLine('Leave')
-  augroup END
+	augroup InsertHook
+	autocmd!
+	autocmd InsertEnter * call s:StatusLine('Enter')
+	autocmd InsertLeave * call s:StatusLine('Leave')
+	augroup END
 endif
 
 let s:slhlcmd = ''
 function! s:StatusLine(mode)
-  if a:mode == 'Enter'
-    silent! let s:slhlcmd = 'highlight ' . s:GetHighlight('StatusLine')
-    silent exec g:hi_insert
-  else
-    highlight clear StatusLine
-    silent exec s:slhlcmd
-  endif
+	if a:mode == 'Enter'
+		silent! let s:slhlcmd = 'highlight ' . s:GetHighlight('StatusLine')
+		silent exec g:hi_insert
+	else
+		highlight clear StatusLine
+		silent exec s:slhlcmd
+	endif
 endfunction
 
 function! s:GetHighlight(hi)
-  redir => hl
-  exec 'highlight '.a:hi
-  redir END
-  let hl = substitute(hl, '[\r\n]', '', 'g')
-  let hl = substitute(hl, 'xxx', '', '')
-  return hl
+	redir => hl
+	exec 'highlight '.a:hi
+	redir END
+	let hl = substitute(hl, '[\r\n]', '', 'g')
+	let hl = substitute(hl, 'xxx', '', '')
+	return hl
 endfunction
 
 if has('unix') && !has('gui_running')
-  " ESC後にすぐ反映されない対策
-  inoremap <silent> <ESC> <ESC>
+	" ESC後にすぐ反映されない対策
+	inoremap <silent> <ESC> <ESC>
 endif
 """"""""""""""""""""""""""""""
 "挿入モード時、ステータスラインの色を変更
 "end
 """"""""""""""""""""""""""""""
-set nocompatible
 filetype plugin indent off
  
 if has('vim_starting')
@@ -94,6 +98,9 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimshell'
 NeoBundle 'sandeepcr529/Buffet.vim'
 NeoBundle 'git://git.code.sf.net/p/vim-latex/vim-latex'
+NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'gregsexton/gitv'
 filetype plugin indent on
 
 call vimfiler#set_execute_file('vim', 'gvim')
@@ -135,4 +142,36 @@ else
 	let g:Tex_ViewRule_ps = '/usr/bin/open'
 	let g:Tex_ViewRule_dvi = '/usr/bin/open'
 endif
+
+"neocomplcache
+"Disable AutoComplPop.
+let g:acp_enableAtStartup = 0
+" Use neocomplcache.
+ let g:neocomplcache_enable_at_startup = 1
+" Use smartcase.
+let g:neocomplcache_enable_smart_case = 1
+" Set minimum syntax keyword length.
+let g:neocomplcache_min_syntax_length = 3
+let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
+
+" Define dictionary.
+let g:neocomplcache_dictionary_filetype_lists = {
+	\ 'default' : ''
+	\ }
+" Plugin key-mappings.
+inoremap <expr><C-g>     neocomplcache#undo_completion()
+inoremap <expr><C-l>     neocomplcache#complete_common_string()
+" Recommended key-mappings.
+" <CR>: close popup and save indent.
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+	return neocomplcache#smart_close_popup() . "\<CR>"
+endfunction
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" <C-h>, <BS>: close popup and delete backword char.
+inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
+inoremap <expr><C-y>  neocomplcache#close_popup()
+inoremap <expr><C-e>  neocomplcache#cancel_popup()
 
