@@ -1,7 +1,13 @@
 #source defaults
+startup_message off
+autodetach on
+defencoding utf8
+defscrollback 3000
 zombie 
 bind w windowlist -b
 hardstatus string "%?%h%:%t (screen #%n on %H)%?"
 caption always "%{=r dd}%-Lw%40L>%?%F%{=b dR}%:[%? %n%f %t %?%F%{-}%:]%?%+Lw"
 sorendition "+rb .G"
-
+log on
+deflog on
+logfile "$HOME/logs/screen-%Y%m%d-%n.log"
