@@ -17,6 +17,10 @@ Icon
 ### Linux ###
 .*
 !.gitignore
+!.zlogin
+!.zshrc
+!.screenrc
+!.vimrc
 *~
 
 ### Windows ###
