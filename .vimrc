@@ -102,6 +102,7 @@ NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'gregsexton/gitv'
 NeoBundle 'Shougo/unite-ssh'
+NeoBundle 'vim-scripts/sudo.vim'
 filetype plugin indent on
 
 call vimfiler#set_execute_file('vim', 'gvim')
