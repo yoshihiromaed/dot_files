@@ -105,8 +105,13 @@ NeoBundle 'Shougo/unite-ssh'
 NeoBundle 'vim-scripts/sudo.vim'
 filetype plugin indent on
 
-call vimfiler#set_execute_file('vim', 'gvim')
-call vimfiler#set_execute_file('txt', 'gvim')
+if has('gui_running')
+	call vimfiler#set_execute_file('vim', 'gvim')
+	call vimfiler#set_execute_file('txt', 'gvim')
+else
+	call vimfiler#set_execute_file('vim', 'vim')
+	call vimfiler#set_execute_file('txt', 'vim')
+endif
 
 """"""""""""""""""""""""""
 "vim-latex
