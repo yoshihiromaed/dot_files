@@ -112,3 +112,19 @@ alls() {
 }
 zle -N alls
 bindkey "\C-m" alls
+
+case "${TERM}" in
+kterm*|xterm*)
+	precmd() {
+ 		printf "\e]0;${USER}@${HOST%%.*}:${PWD}\a"
+	}
+	;;
+screen*|ansi*)
+	preexec() {
+		printf "\ek!$1\e\\"
+	}
+	precmd() {
+		printf "\ek~$(basename $(pwd))\e\\"
+	}
+	;;
+esac

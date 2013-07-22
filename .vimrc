@@ -10,6 +10,7 @@ syntax on
 set nocompatible
 set whichwrap=b,s,h,l,<,>,[,]
 let loaded_gzip = 1
+set fileencodings=iso-2022-jp,cp932,sjis,euc-jp,utf-8
 " .vimrcを開く
 nnoremap <Space>.  :<C-u>edit $MYVIMRC<CR>
 " source ~/.vimrc を実行する。
@@ -103,6 +104,7 @@ NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'gregsexton/gitv'
 NeoBundle 'Shougo/unite-ssh'
 NeoBundle 'vim-scripts/sudo.vim'
+NeoBundle 'thinca/vim-quickrun'
 filetype plugin indent on
 
 if has('gui_running')
@@ -116,8 +118,6 @@ endif
 """"""""""""""""""""""""""
 "vim-latex
 """""""""""""""""""""""""
-filetype plugin on
-filetype indent on
 set shellslash
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor='latex'
@@ -181,4 +181,3 @@ inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><C-y>  neocomplcache#close_popup()
 inoremap <expr><C-e>  neocomplcache#cancel_popup()
-

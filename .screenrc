@@ -11,3 +11,4 @@ sorendition "+rb .G"
 log on
 deflog on
 logfile "$HOME/logs/screen-%Y%m%d-%n.log"
+escape l
