@@ -10,7 +10,6 @@ syntax on
 set nocompatible
 set whichwrap=b,s,h,l,<,>,[,]
 let loaded_gzip = 1
-set fileencodings=iso-2022-jp,cp932,sjis,euc-jp,utf-8
 " .vimrcを開く
 nnoremap <Space>.  :<C-u>edit $MYVIMRC<CR>
 " source ~/.vimrc を実行する。

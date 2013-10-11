@@ -5,6 +5,7 @@ export LANG=ja_JP.UTF-8
 typeset -U PATH CDPATH FPATH MANPATH
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/texbin
 export MANPATH=/usr/local/man:/usr/texbin/man:$MANPATH
+export EDITOR=/usr/bin/vim
 # プロンプトの設定(カレントディレクトリを右に)
 PROMPT="%% "
 RPROMPT="[%/]"
