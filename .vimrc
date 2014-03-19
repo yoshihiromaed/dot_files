@@ -104,7 +104,6 @@ NeoBundle 'gregsexton/gitv'
 NeoBundle 'Shougo/unite-ssh'
 NeoBundle 'vim-scripts/sudo.vim'
 NeoBundle 'thinca/vim-quickrun'
-NeoBundle 'yuratomo/w3m.vim'
 filetype plugin indent on
 
 if has('gui_running')

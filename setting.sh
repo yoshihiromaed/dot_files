@@ -2,9 +2,9 @@ if [ ! -d ~/.vim/bundle ] ; then
 	mkdir -p ~/.vim/bundle
 fi
 
-if [ ! -d ~/logs ] ; then
-	mkdir ~/logs
-fi
+#if [ ! -d ~/logs ] ; then
+	#mkdir ~/logs
+#fi
 
 ln -s -f ~/dot_files/.screenrc ~/.screenrc
 if [ ! -d ~/.vim/bundle/neobundle.vim ] ; then
