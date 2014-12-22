@@ -82,11 +82,11 @@ filetype plugin indent off
  
 if has('vim_starting')
 	if has('win32') || has('win64')
-		set runtimepath+=~/vimfiles/bundle/neobundle.vim/
-		call neobundle#rc(expand('~/vimfiles/bundle/'))
+		set runtimepath+=$VIM/plugins/bundle/neobundle.vim/
+		call neobundle#begin(expand('$VIM/plugins/bundle/neobundle.vim/'))
 	else
 		set runtimepath+=~/.vim/bundle/neobundle.vim/
-		call neobundle#rc(expand('~/.vim/bundle/'))
+		call neobundle#begin(expand('~/.vim/bundle/'))
 	endif
 endif
  
@@ -104,6 +104,7 @@ NeoBundle 'gregsexton/gitv'
 NeoBundle 'Shougo/unite-ssh'
 NeoBundle 'vim-scripts/sudo.vim'
 NeoBundle 'thinca/vim-quickrun'
+call neobundle#end()
 filetype plugin indent on
 
 if has('gui_running')
