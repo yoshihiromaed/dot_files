@@ -4,7 +4,7 @@ set incsearch
 set hlsearch
 "case-insensitive search
 set ignorecase
-"no case-insensitive search, when search in capital letters
+"no case-insensitive search when search in capital letters
 set smartcase
 "line number
 set number
@@ -33,7 +33,7 @@ nnoremap <silent><Space>s    :<C-u>update<CR>
 
 
 """"""""""""""""""""""""""""""
-"change status line's color, when insert mode
+"change status line's color when insert mode
 """"""""""""""""""""""""""""""
 let g:hi_insert = 'highlight StatusLine guifg=darkblue guibg=darkyellow gui=none ctermfg=blue ctermbg=yellow cterm=none'
 

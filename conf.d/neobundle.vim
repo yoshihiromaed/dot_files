@@ -38,12 +38,22 @@ let g:vimfiler_as_default_explorer = 1
 let g:vimfiler_edit_action = 'tabopen'
 "start filer
 nnoremap <silent><Space>j    :VimFilerBufferDir<CR>
+
+""""""""""""""""""""""""""
+"unite
+""""""""""""""""""""""""""
 "file history limit
 let g:unite_source_file_mru_limit = 300
-"recently used files
+"file_mru timestamp
+let g:neomru#time_format = "(%Y/%m%d %H:%M:%S)"
+"most recently used files
 nnoremap <silent><Space>m    :Unite file_mru<CR>
 "buffer list
 nnoremap <silent><Space>l    :Unite buffer<CR>
+"reister list
+nnoremap <silent><Space>r    :Unite register<CR>
+"source list
+nnoremap <silent><Space>s    :Unite source<CR>
 
 "file extension setting
 if has('gui_running') 
@@ -95,3 +105,10 @@ inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><C-y>  neocomplcache#close_popup()
 inoremap <expr><C-e>  neocomplcache#cancel_popup()
+
+""""""""""""""""""""""""""
+"VimShell
+""""""""""""""""""""""""""
+nnoremap <silent><Space>v    :VimShell<CR>
+let g:vimshell_prompt_expr = 'getcwd()." > "'
+let g:vimshell_prompt_pattern = '^\f\+ > '
