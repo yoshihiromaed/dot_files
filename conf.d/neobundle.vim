@@ -119,3 +119,10 @@ let g:vimshell_prompt_pattern = '^\f\+ > '
 """"""""""""""""""""""""""
 "qfixhowm
 """""""""""""""""""""""""
+if has('win32') || has('win64')
+	let howm_dir = '$VIM/howm'
+	let g:QFixMRU_Filename = '$VIM/howm/.qfixmru'
+else
+	let howm_dir = '~/Dropbox/App/vim74-kaoriya-win64/howm'
+	let g:QFixMRU_Filename = '~/Dropbox/App/vim74-kaoriya-win64/howm/.qfixmru'
+endif
