@@ -27,6 +27,8 @@ NeoBundle 'gregsexton/gitv'
 NeoBundle 'Shougo/unite-ssh'
 NeoBundle 'vim-scripts/sudo.vim'
 NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'fuenor/qfixgrep'
+NeoBundle 'fuenor/qfixhowm'
 call neobundle#end()
 filetype plugin indent on
 
@@ -112,3 +114,8 @@ inoremap <expr><C-e>  neocomplcache#cancel_popup()
 nnoremap <silent><Space>v    :VimShell<CR>
 let g:vimshell_prompt_expr = 'getcwd()." > "'
 let g:vimshell_prompt_pattern = '^\f\+ > '
+
+
+""""""""""""""""""""""""""
+"qfixhowm
+"""""""""""""""""""""""""
