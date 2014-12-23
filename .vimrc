@@ -70,5 +70,10 @@ if has('unix') && !has('gui_running')
 	inoremap <silent> <ESC> <ESC>
 endif
 
-set rtp+=$HOME/dot_files/
-runtime! conf.d/*.vim
+if has('win32') || has('win32')
+	set rtp+=$VIM/dot_files/
+	runtime! conf.d/*.vim
+else
+	set rtp+=$HOME/dot_files/
+	runtime! conf.d/*.vim
+endif
