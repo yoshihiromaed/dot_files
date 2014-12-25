@@ -14,6 +14,7 @@ syntax on
 set nocompatible
 "beep off
 set visualbell t_vb=
+set noerrorbells
 "wrap around the start and end of individual lines
 set whichwrap=b,s,h,l,<,>,[,]
 "not load gzip plugin
@@ -32,7 +33,7 @@ nnoremap <silent><Space>b    :bp<CR>
 "next buffer
 nnoremap <silent><Space>n    :bn<CR>
 "delete buffer
-nnoremap <silent><Space>k    :bd<CR>
+nnoremap <silent><Space>d    :bd<CR>
 "save current buffer 
 nnoremap <silent><Space>s    :<C-u>update<CR> 
 
