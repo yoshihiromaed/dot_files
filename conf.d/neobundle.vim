@@ -29,6 +29,7 @@ NeoBundle 'vim-scripts/sudo.vim'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'fuenor/qfixgrep'
 NeoBundle 'fuenor/qfixhowm'
+NeoBundle 'kana/vim-submode'
 call neobundle#end()
 filetype plugin indent on
 
