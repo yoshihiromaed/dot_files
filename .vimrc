@@ -24,7 +24,7 @@ set encoding=utf-8
 set fileencodings=iso-2022-jp,cp932,sjis,euc-jp,utf-8
 set fileformats=unix,dos,mac
 "open .vimrc
-nnoremap <Space>.  :<C-u>edit $MYVIMRC<CR>execute
+nnoremap <Space>.  :<C-u>edit $MYVIMRC<CR>
 "execute source ~/.vimrc
 nnoremap <Space>,  :<C-u>source $MYVIMRC<CR> 
 "previous buffer
