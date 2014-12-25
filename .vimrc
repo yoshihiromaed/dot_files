@@ -12,6 +12,8 @@ set number
 syntax on
 "no Vi compatible
 set nocompatible
+"beep off
+set visualbell t_vb=
 "wrap around the start and end of individual lines
 set whichwrap=b,s,h,l,<,>,[,]
 "not load gzip plugin
@@ -22,7 +24,7 @@ set encoding=utf-8
 set fileencodings=iso-2022-jp,cp932,sjis,euc-jp,utf-8
 set fileformats=unix,dos,mac
 "open .vimrc
-nnoremap <Space>.  :<C-u>edit $MYVIMRC<CR>
+nnoremap <Space>.  :<C-u>edit $MYVIMRC<CR>execute
 "execute source ~/.vimrc
 nnoremap <Space>,  :<C-u>source $MYVIMRC<CR> 
 "previous buffer
