@@ -4,10 +4,10 @@ export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/texbi
 export MANPATH=/usr/local/man:/usr/texbin/man:$MANPATH
 export EDITOR=/usr/bin/vim
 if [ -e /usr/local/share/zsh-completions ]; then
-	FPATH=(/usr/local/share/zsh-completions $FPATH)
+	fpath=(/usr/local/share/zsh-completions $fpath)
 fi
 if [ -e $(brew --prefix)/share/zsh/site-functions ]; then
-	FPATH=($(brew --prefix)/share/zsh/site-functions $FPATH)
+	fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
 fi
 typeset -U PATH CDPATH FPATH MANPATH
 autoload -U compinit
