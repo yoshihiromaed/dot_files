@@ -20,6 +20,7 @@ let loaded_gzip = 1
 set encoding=utf-8
 "file encoding setting
 set fileencodings=iso-2022-jp,cp932,sjis,euc-jp,utf-8
+set fileformats=unix,dos,mac
 "open .vimrc
 nnoremap <Space>.  :<C-u>edit $MYVIMRC<CR>
 "execute source ~/.vimrc
