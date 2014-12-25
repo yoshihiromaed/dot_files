@@ -16,8 +16,10 @@ set nocompatible
 set whichwrap=b,s,h,l,<,>,[,]
 "not load gzip plugin
 let loaded_gzip = 1
-"file encode: utf-8
-set fileencodings=utf-8
+"vim encoding setting
+set encoding=utf-8
+"file encoding setting
+set fileencodings=iso-2022-jp,cp932,sjis,euc-jp,utf-8
 "open .vimrc
 nnoremap <Space>.  :<C-u>edit $MYVIMRC<CR>
 "execute source ~/.vimrc
@@ -31,6 +33,8 @@ nnoremap <silent><Space>k    :bd<CR>
 "save current buffer 
 nnoremap <silent><Space>s    :<C-u>update<CR> 
 
+"statusline
+set statusline=%F%m%r%h%w%=[ENC=%{&fileencoding}]\ [FF=%{&ff}]\ [L=%l/%L][%p%%]\ %{fugitive#statusline()} 
 
 """"""""""""""""""""""""""""""
 "change status line's color when insert mode
@@ -77,3 +81,21 @@ else
 	set rtp+=$HOME/dot_files/
 	runtime! conf.d/*.vim
 endif
+
+"""""""""""""""""""""""""""""""""
+" Windows
+"""""""""""""""""""""""""""""""""
+" $VIM/dot_files/.vimrc
+" $VIM/dot_files/conf.d/neobundle.vim
+" $VIM/dot_files/conf.d/split.vim
+" $VIM/dot_files/conf.d/tab.vim
+" $VIM/dot_files/conf.d/vim-latex.vim
+"
+"""""""""""""""""""""""""""""""""
+" Mac / Linux 
+"""""""""""""""""""""""""""""""""
+" ~/dot_files/.vimrc
+" ~/dot_files/conf.d/neobundle.vim
+" ~/dot_files/conf.d/split.vim
+" ~/dot_files/conf.d/tab.vim
+" ~/dot_files/conf.d/vim-latex.vim

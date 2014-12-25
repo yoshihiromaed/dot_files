@@ -24,12 +24,13 @@ NeoBundle 'git://git.code.sf.net/p/vim-latex/vim-latex'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'gregsexton/gitv'
-NeoBundle 'Shougo/unite-ssh'
-NeoBundle 'vim-scripts/sudo.vim'
-NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'fuenor/qfixgrep'
 NeoBundle 'fuenor/qfixhowm'
 NeoBundle 'kana/vim-submode'
+NeoBundle 'Shougo/unite-ssh'
+NeoBundle 'soramugi/auto-ctags.vim'
+NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'vim-scripts/sudo.vim'
 call neobundle#end()
 filetype plugin indent on
 
@@ -117,7 +118,7 @@ let g:vimshell_prompt_expr = 'getcwd()." > "'
 let g:vimshell_prompt_pattern = '^\f\+ > '
 
 
-""""""""""""""""""""""""""
+"""""""""""""""""""""""""
 "qfixhowm
 """""""""""""""""""""""""
 if has('win32') || has('win64')
@@ -127,3 +128,29 @@ else
 	let howm_dir = '~/Dropbox/App/vim74-kaoriya-win64/howm'
 	let g:QFixMRU_Filename = '~/Dropbox/App/vim74-kaoriya-win64/howm/.qfixmru'
 endif
+
+"""""""""""""""""""""""""
+"auto_ctags
+"""""""""""""""""""""""""
+if !has('win32') || !has('win64')
+	let g:auto_ctags = 1
+	let g:auto_ctags_bin_path = 'ctags'
+endif
+
+"""""""""""""""""""""""""""""""""
+" Windows
+"""""""""""""""""""""""""""""""""
+" $VIM/dot_files/.vimrc
+" $VIM/dot_files/conf.d/neobundle.vim
+" $VIM/dot_files/conf.d/split.vim
+" $VIM/dot_files/conf.d/tab.vim
+" $VIM/dot_files/conf.d/vim-latex.vim
+"
+"""""""""""""""""""""""""""""""""
+" Mac / Linux 
+"""""""""""""""""""""""""""""""""
+" ~/dot_files/.vimrc
+" ~/dot_files/conf.d/neobundle.vim
+" ~/dot_files/conf.d/split.vim
+" ~/dot_files/conf.d/tab.vim
+" ~/dot_files/conf.d/vim-latex.vim
