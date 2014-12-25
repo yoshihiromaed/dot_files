@@ -35,7 +35,7 @@ nnoremap <silent><Space>k    :bd<CR>
 nnoremap <silent><Space>s    :<C-u>update<CR> 
 
 "statusline
-set statusline=%F%m%r%h%w%=[ENC=%{&fileencoding}]\ [FF=%{&ff}]\ [L=%l/%L][%p%%]\ %{fugitive#statusline()} 
+set statusline=%F%m%r%h%w%=[ENC=%{&fileencoding}]\ [FF=%{&ff}]\ [L=%l/%L]\ %{fugitive#statusline()} 
 
 """"""""""""""""""""""""""""""
 "change status line's color when insert mode
