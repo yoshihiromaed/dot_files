@@ -26,12 +26,15 @@ NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'gregsexton/gitv'
 NeoBundle 'fuenor/qfixhowm'
 NeoBundle 'fuenor/qfixgrep'
-"test plugins
-NeoBundle 'soramugi/auto-ctags.vim'
 NeoBundle 'kana/vim-submode'
+"Mac / Linux
+if !has('win32') && !has('win64')
+	NeoBundle 'vim-scripts/sudo.vim'
+	NeoBundle 'soramugi/auto-ctags.vim'
+endif
+"test plugins
 NeoBundle 'Shougo/unite-ssh'
 NeoBundle 'thinca/vim-quickrun'
-NeoBundle 'vim-scripts/sudo.vim'
 call neobundle#end()
 filetype plugin indent on
 
@@ -137,18 +140,16 @@ inoremap <expr><C-e>  neocomplcache#cancel_popup()
 """""""""""""""""""""""""
 "qfixhowm,qfixgrep
 """""""""""""""""""""""""
-if has('win32') || has('win64')
-	let howm_dir = '$VIM/howm'
-	let g:QFixMRU_Filename = '$VIM/howm/.qfixmru'
-else
-	let howm_dir = '~/Dropbox/App/vim74-kaoriya-win64/howm'
-	let g:QFixMRU_Filename = '~/Dropbox/App/vim74-kaoriya-win64/howm/.qfixmru'
-endif
+let g:howm_dir='~/Dropbox/App/vim74-kaoriya-win64/howm'
+let g:QFixMRU_Filename='~/Dropbox/App/vim74-kaoriya-win64/howm/.qfixmru'
+let g:QFixHowm_ListReminder_ScheExt='[-@+!~]'
+let QFixHowm_ShowSchedule=30
+let QFixHowm_ShowScheduleMenu=30
 
 """""""""""""""""""""""""
 "auto_ctags
 """""""""""""""""""""""""
-if !has('win32') || !has('win64')
+if !has('win32') && !has('win64')
 	let g:auto_ctags = 1
 	let g:auto_ctags_bin_path = 'ctags'
 endif
