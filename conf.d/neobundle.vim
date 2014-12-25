@@ -20,22 +20,23 @@ NeoBundle 'Shougo/vimfiler'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'Shougo/vimshell'
-NeoBundle 'git://git.code.sf.net/p/vim-latex/vim-latex'
 NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'git://git.code.sf.net/p/vim-latex/vim-latex'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'gregsexton/gitv'
-NeoBundle 'fuenor/qfixgrep'
 NeoBundle 'fuenor/qfixhowm'
+NeoBundle 'fuenor/qfixgrep'
+"test plugins
+NeoBundle 'soramugi/auto-ctags.vim'
 NeoBundle 'kana/vim-submode'
 NeoBundle 'Shougo/unite-ssh'
-NeoBundle 'soramugi/auto-ctags.vim'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'vim-scripts/sudo.vim'
 call neobundle#end()
 filetype plugin indent on
 
 """"""""""""""""""""""""""
-"vimfiler setting
+"vimfiler
 """"""""""""""""""""""""""
 let g:vimfiler_safe_mode_by_default = 0
 let g:vimfiler_as_default_explorer = 1
@@ -44,7 +45,7 @@ let g:vimfiler_edit_action = 'tabopen'
 nnoremap <silent><Space>j    :VimFilerBufferDir<CR>
 
 """"""""""""""""""""""""""
-"unite
+"unite, neomru
 """"""""""""""""""""""""""
 "file history limit
 let g:unite_source_file_mru_limit = 300
@@ -75,6 +76,13 @@ else
 	call vimfiler#set_execute_file('txt', 'vim')
 	call vimfiler#set_execute_file('tex', 'vim')
 endif
+
+""""""""""""""""""""""""""
+"VimShell
+""""""""""""""""""""""""""
+nnoremap <silent><Space>v    :VimShell<CR>
+let g:vimshell_prompt_expr = 'getcwd()." > "'
+let g:vimshell_prompt_pattern = '^\f\+ > '
 
 """"""""""""""""""""""""""
 "neocomplcache
@@ -110,16 +118,24 @@ inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><C-y>  neocomplcache#close_popup()
 inoremap <expr><C-e>  neocomplcache#cancel_popup()
 
-""""""""""""""""""""""""""
-"VimShell
-""""""""""""""""""""""""""
-nnoremap <silent><Space>v    :VimShell<CR>
-let g:vimshell_prompt_expr = 'getcwd()." > "'
-let g:vimshell_prompt_pattern = '^\f\+ > '
-
+"""""""""""""""""""""""""
+"vim-latex
+"""""""""""""""""""""""""
+"Windows
+" $VIM/dot_files/conf.d/vim-latex.vim
+" Mac / Linux
+" ~/dot_files/conf.d/vim-latex.vim
 
 """""""""""""""""""""""""
-"qfixhowm
+"vim-fugitve
+"""""""""""""""""""""""""
+
+"""""""""""""""""""""""""
+"gitv
+"""""""""""""""""""""""""
+
+"""""""""""""""""""""""""
+"qfixhowm,qfixgrep
 """""""""""""""""""""""""
 if has('win32') || has('win64')
 	let howm_dir = '$VIM/howm'
