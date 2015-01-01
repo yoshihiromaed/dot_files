@@ -8,7 +8,7 @@ fi
 
 ln -s -f ~/dot_files/.screenrc ~/.screenrc
 if [ ! -d ~/.vim/bundle/neobundle.vim ] ; then
-	git clone git@github.com:Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
+	git clone https://github.com/Shougo/neobundle.vim.git ~/.vim/bundle/neobundle.vim
 fi
 ln -s -f ~/dot_files/.vimrc ~/.vimrc
 echo "[ -f ${HOME}/dot_files/.zshrc ] && source ${HOME}/dot_files/.zshrc" > ~/.zshrc
