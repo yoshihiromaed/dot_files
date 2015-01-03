@@ -6,9 +6,9 @@ export EDITOR=/usr/bin/vim
 if [ -e /usr/local/share/zsh-completions ]; then
 	fpath=(/usr/local/share/zsh-completions $fpath)
 fi
-if [ -e $(brew --prefix)/share/zsh/site-functions ]; then
-	fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
-fi
+#if [ -e $(brew --prefix)/share/zsh/site-functions ]; then
+#	fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
+#fi
 typeset -U PATH CDPATH FPATH MANPATH
 autoload -U compinit
 compinit -u
@@ -98,6 +98,16 @@ SAVEHIST=100000
 setopt hist_ignore_dups
 # 履歴ファイルに時刻を記録
 setopt extended_history
+#share history
+setopt share_history
+#delete blank
+setopt hist_reduce_blanks
+#incrimental history
+setopt inc_append_history
+#ignore space
+setopt hist_ignore_space
+#history verify
+setopt hist_verify
 # 全履歴の一覧を出力する
 function history-all { history -E 1 }
 #先方予想
