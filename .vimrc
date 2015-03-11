@@ -45,6 +45,11 @@ set statusline=%F%m%r%h%w%=[ENC=%{&fileencoding}]\ [FF=%{&ff}]\ [L=%l/%L]\ %{fug
 """"""""""""""""""""""""""""""
 let g:hi_insert = 'highlight StatusLine guifg=darkblue guibg=darkyellow gui=none ctermfg=blue ctermbg=yellow cterm=none'
 
+if has('win32') || has('win64')
+	set guifont=Consolas:h12:cANSI
+	set guifontwide=MS_Gothic:h12:b:cSHIFTJIS
+endif
+
 if has('syntax')
 	augroup InsertHook
 	autocmd!
