@@ -30,7 +30,6 @@ NeoBundle 'kana/vim-submode'
 "Mac / Linux
 if !has('win32') && !has('win64')
 	NeoBundle 'vim-scripts/sudo.vim'
-	NeoBundle 'soramugi/auto-ctags.vim'
 endif
 "test plugins
 NeoBundle 'Shougo/unite-ssh'
@@ -145,14 +144,6 @@ let g:QFixMRU_Filename='~/Dropbox/App/vim74-kaoriya-win64/howm/.qfixmru'
 let g:QFixHowm_ListReminder_ScheExt='[-@+!~]'
 let QFixHowm_ShowSchedule=30
 let QFixHowm_ShowScheduleMenu=30
-
-"""""""""""""""""""""""""
-"auto_ctags
-"""""""""""""""""""""""""
-if !has('win32') && !has('win64')
-	let g:auto_ctags = 1
-	let g:auto_ctags_bin_path = 'ctags'
-endif
 
 """""""""""""""""""""""""""""""""
 " Windows
