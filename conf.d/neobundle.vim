@@ -139,8 +139,8 @@ inoremap <expr><C-e>  neocomplcache#cancel_popup()
 """""""""""""""""""""""""
 "qfixhowm,qfixgrep
 """""""""""""""""""""""""
-let g:howm_dir='~/Dropbox/App/vim74-kaoriya-win64/howm'
-let g:QFixMRU_Filename='~/Dropbox/App/vim74-kaoriya-win64/howm/.qfixmru'
+let g:howm_dir='~/Dropbox/App/vim/howm'
+let g:QFixMRU_Filename='~/Dropbox/App/vim/howm/.qfixmru'
 let g:QFixHowm_ListReminder_ScheExt='[-@+!~]'
 let QFixHowm_ShowSchedule=30
 let QFixHowm_ShowScheduleMenu=30
