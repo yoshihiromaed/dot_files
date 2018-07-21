@@ -22,9 +22,9 @@ autoload colors
 colors
 case ${UID} in
 0)
-  PROMPT="%{${fg[blue]}%}%/%%%{${reset_color}%} "
-  PROMPT2="%{${fg[blue]}%}%_%%%{${reset_color}%} "
-  SPROMPT="%{${fg[blue]}%}%r is correct? [n,y,a,e]:%{${reset_color}%} "
+  PROMPT="%{${fg[green]}%}%/%%%{${reset_color}%} "
+  PROMPT2="%{${fg[green]}%}%_%%%{${reset_color}%} "
+  SPROMPT="%{${fg[green]}%}%r is correct? [n,y,a,e]:%{${reset_color}%} "
   [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] &&
     PROMPT="%{${fg[white]}%}${HOST%%.*} ${PROMPT}"
   ;;
