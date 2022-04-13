@@ -123,7 +123,7 @@ alls() {
   zle accept-line
   if [[ -z "$BUFFER" ]]; then
     echo ''
-    ls
+    ls -la
   fi
 }
 zle -N alls
