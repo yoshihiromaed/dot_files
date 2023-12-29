@@ -1,18 +1,18 @@
 "incremental search
 set incsearch
-""high light search
+"high light search
 set hlsearch
-""case-insensitive search
+"case-insensitive search
 set ignorecase
-""no case-insensitive search when search in capital letters
+"no case-insensitive search when search in capital letters
 set smartcase
-""line number
+"line number
 set number
-""color up syntax
+"color up syntax
 syntax on
-""no Vi compatible
+"no Vi compatible
 set nocompatible
-""beep off
+"beep off
 set visualbell t_vb=
 set noerrorbells
 "wrap around the start and end of individual lines
