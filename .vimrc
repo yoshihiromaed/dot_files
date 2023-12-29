@@ -1,18 +1,18 @@
 "incremental search
 set incsearch
-"high light search
+""high light search
 set hlsearch
-"case-insensitive search
+""case-insensitive search
 set ignorecase
-"no case-insensitive search when search in capital letters
+""no case-insensitive search when search in capital letters
 set smartcase
-"line number
+""line number
 set number
-"color up syntax
+""color up syntax
 syntax on
-"no Vi compatible
+""no Vi compatible
 set nocompatible
-"beep off
+""beep off
 set visualbell t_vb=
 set noerrorbells
 "wrap around the start and end of individual lines
@@ -28,14 +28,6 @@ set fileformats=unix,dos,mac
 nnoremap <Space>.  :<C-u>edit $MYVIMRC<CR>
 "execute source ~/.vimrc
 nnoremap <Space>,  :<C-u>source $MYVIMRC<CR> 
-"previous buffer
-nnoremap <silent><Space>b    :bp<CR>
-"next buffer
-nnoremap <silent><Space>n    :bn<CR>
-"delete buffer
-nnoremap <silent><Space>d    :bd<CR>
-"save current buffer 
-nnoremap <silent><Space>s    :<C-u>update<CR> 
 
 "statusline
 set statusline=%F%m%r%h%w%=[ENC=%{&fileencoding}]\ [FF=%{&ff}]\ [L=%l/%L]\ %{fugitive#statusline()} 
@@ -79,9 +71,9 @@ function! s:GetHighlight(hi)
 endfunction
 
 " ESC後にすぐ反映されない対策
-if has('unix') && !has('gui_running')
-	inoremap <silent> <ESC> <ESC>
-endif
+"if has('unix') && !has('gui_running')
+"	inoremap <silent> <ESC> <ESC>
+"endif
 
 if has('win32') || has('win32')
 	set rtp+=$VIM/dot_files/
