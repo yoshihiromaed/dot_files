@@ -114,7 +114,6 @@ function history-all { history -E 1 }
 autoload predict-on
 predict-on
 #alias
-alias ls="ls -la"
 alias -g L="| less"
 alias -g G="| grep"
 alias ss="screen"
@@ -124,7 +123,7 @@ alls() {
   zle accept-line
   if [[ -z "$BUFFER" ]]; then
     echo ''
-    ls
+    ls -la
   fi
 }
 zle -N alls
