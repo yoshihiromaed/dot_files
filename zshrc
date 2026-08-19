@@ -1,6 +1,6 @@
 # 環境変数LANG
 export LANG=ja_JP.UTF-8
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/texbin
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/texbin:~/.local/bin
 export MANPATH=/usr/local/man:/usr/texbin/man:$MANPATH
 export EDITOR=/usr/bin/vim
 if [ -e /usr/local/share/zsh-completions ]; then
