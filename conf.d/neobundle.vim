@@ -20,15 +20,10 @@ NeoBundle 'Shougo/vimfiler'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'Shougo/neocomplcache'
-NeoBundle 'vim-latex/vim-latex'
 NeoBundle 'kana/vim-submode'
-"Mac / Linux
-if !has('win32') && !has('win64')
-	NeoBundle 'vim-scripts/sudo.vim'
-endif
 "test plugins
-NeoBundle 'Shougo/unite-ssh'
 NeoBundle 'thinca/vim-quickrun'
+
 call neobundle#end()
 filetype plugin indent on
 
@@ -108,24 +103,14 @@ inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><C-y>  neocomplcache#close_popup()
 inoremap <expr><C-e>  neocomplcache#cancel_popup()
 
-"""""""""""""""""""""""""
-"vim-latex
-"""""""""""""""""""""""""
-"Windows
-" $VIM/dot_files/conf.d/vim-latex.vim
-" Mac / Linux
-" ~/dot_files/conf.d/vim-latex.vim
-
 """""""""""""""""""""""""""""""""
 " Windows
 """""""""""""""""""""""""""""""""
 " $VIM/dot_files/.vimrc
 " $VIM/dot_files/conf.d/neobundle.vim
-" $VIM/dot_files/conf.d/vim-latex.vim
 "
 """""""""""""""""""""""""""""""""
 " Mac / Linux 
 """""""""""""""""""""""""""""""""
 " ~/dot_files/.vimrc
 " ~/dot_files/conf.d/neobundle.vim
-" ~/dot_files/conf.d/vim-latex.vim
