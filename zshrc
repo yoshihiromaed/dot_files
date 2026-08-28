@@ -89,7 +89,7 @@ setopt correct
 # 補完候補をつめて表示
 setopt list_packed
 # 履歴をファイルに保存する
-HISTFILE=$HOME/.zsh_hisotry
+HISTFILE=$HOME/.zsh_history
 # メモリ内の履歴の数
 HISTSIZE=100000
 # 保存される履歴の数
