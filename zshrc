@@ -1,6 +1,10 @@
 # 環境変数LANG
 export LANG=ja_JP.UTF-8
+<<<<<<< HEAD:zshrc
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/texbin:~/.local/bin
+=======
+export PATH=/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/texbin
+>>>>>>> f5b5d5a (chanege):.zshrc
 export MANPATH=/usr/local/man:/usr/texbin/man:$MANPATH
 export EDITOR=/usr/bin/vim
 if [ -e /usr/local/share/zsh-completions ]; then

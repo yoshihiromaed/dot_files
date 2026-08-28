@@ -88,8 +88,6 @@ endif
 """""""""""""""""""""""""""""""""
 " $VIM/dot_files/vimrc
 " $VIM/dot_files/conf.d/neobundle.vim
-" $VIM/dot_files/conf.d/split.vim
-" $VIM/dot_files/conf.d/tab.vim
 " $VIM/dot_files/conf.d/vim-latex.vim
 "
 """""""""""""""""""""""""""""""""
@@ -97,6 +95,4 @@ endif
 """""""""""""""""""""""""""""""""
 " ~/dot_files/vimrc
 " ~/dot_files/conf.d/neobundle.vim
-" ~/dot_files/conf.d/split.vim
-" ~/dot_files/conf.d/tab.vim
 " ~/dot_files/conf.d/vim-latex.vim

@@ -19,13 +19,8 @@ NeoBundle 'Shougo/vimproc'
 NeoBundle 'Shougo/vimfiler'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neomru.vim'
-NeoBundle 'Shougo/vimshell'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'vim-latex/vim-latex'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'gregsexton/gitv'
-NeoBundle 'fuenor/qfixhowm'
-NeoBundle 'fuenor/qfixgrep'
 NeoBundle 'kana/vim-submode'
 "Mac / Linux
 if !has('win32') && !has('win64')
@@ -80,13 +75,6 @@ else
 endif
 
 """"""""""""""""""""""""""
-"VimShell
-""""""""""""""""""""""""""
-nnoremap <silent><Space>v    :VimShell<CR>
-let g:vimshell_prompt_expr = 'getcwd()." > "'
-let g:vimshell_prompt_pattern = '^\f\+ > '
-
-""""""""""""""""""""""""""
 "neocomplcache
 """"""""""""""""""""""""""
 "Disable AutoComplPop.
@@ -128,30 +116,11 @@ inoremap <expr><C-e>  neocomplcache#cancel_popup()
 " Mac / Linux
 " ~/dot_files/conf.d/vim-latex.vim
 
-"""""""""""""""""""""""""
-"vim-fugitve
-"""""""""""""""""""""""""
-
-"""""""""""""""""""""""""
-"gitv
-"""""""""""""""""""""""""
-
-"""""""""""""""""""""""""
-"qfixhowm,qfixgrep
-"""""""""""""""""""""""""
-let g:howm_dir='~/Dropbox/App/vim/howm'
-let g:QFixMRU_Filename='~/Dropbox/App/vim/howm/.qfixmru'
-let g:QFixHowm_ListReminder_ScheExt='[-@+!~]'
-let QFixHowm_ShowSchedule=30
-let QFixHowm_ShowScheduleMenu=30
-
 """""""""""""""""""""""""""""""""
 " Windows
 """""""""""""""""""""""""""""""""
 " $VIM/dot_files/.vimrc
 " $VIM/dot_files/conf.d/neobundle.vim
-" $VIM/dot_files/conf.d/split.vim
-" $VIM/dot_files/conf.d/tab.vim
 " $VIM/dot_files/conf.d/vim-latex.vim
 "
 """""""""""""""""""""""""""""""""
@@ -159,6 +128,4 @@ let QFixHowm_ShowScheduleMenu=30
 """""""""""""""""""""""""""""""""
 " ~/dot_files/.vimrc
 " ~/dot_files/conf.d/neobundle.vim
-" ~/dot_files/conf.d/split.vim
-" ~/dot_files/conf.d/tab.vim
 " ~/dot_files/conf.d/vim-latex.vim

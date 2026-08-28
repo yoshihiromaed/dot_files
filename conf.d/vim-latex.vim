@@ -22,9 +22,9 @@ if has('win32') || has('win64')
 	let g:Tex_ViewRule_ps = 'C:\Program Files\gs\gs9.07\bin\gswin32.exe'
 	let g:Tex_ViewRule_dvi = 'C:\Program Files\gs\gs9.07\bin\gswin32.exe'
 else
-	let g:Tex_CompileRule_pdf = '/usr/texbin/simpdftex platex --mode dvipdfmx --dvipdfmopts "-p a4" --maxpfb --extratexopts "-file-line-error -synctex=1" $*'
-	let g:Tex_CompileRule_ps = '/usr/texbin/dvips -Ppdf -o $*.ps $*.dvi'
-	let g:Tex_CompileRule_dvi = '/usr/texbin/platex -synctex=1 -interaction=nonstopmode -file-line-error-style $*'
+	let g:Tex_CompileRule_pdf = '/opt/homebrew/uplaatex --mode dvipdfmx --dvipdfmopts "-p a4" --maxpfb --extratexopts "-file-line-error -synctex=1" $*'
+	let g:Tex_CompileRule_ps = '/opt/homebrew/dvips -Ppdf -o $*.ps $*.dvi'
+	let g:Tex_CompileRule_dvi = '/opt/homebrew/platex -synctex=1 -interaction=nonstopmode -file-line-error-style $*'
 	let g:Tex_BibtexFlavor = '/usr/texbin/pbibtex'
 	let g:Tex_MakeIndexFlavor = '/usr/texbin/mendex $*.idx'
 	let g:Tex_UseEditorSettingInDVIViewer = 1
@@ -38,8 +38,6 @@ endif
 """""""""""""""""""""""""""""""""
 " $VIM/dot_files/.vimrc
 " $VIM/dot_files/conf.d/neobundle.vim
-" $VIM/dot_files/conf.d/split.vim
-" $VIM/dot_files/conf.d/tab.vim
 " $VIM/dot_files/conf.d/vim-latex.vim
 "
 """""""""""""""""""""""""""""""""
@@ -47,6 +45,4 @@ endif
 """""""""""""""""""""""""""""""""
 " ~/dot_files/.vimrc
 " ~/dot_files/conf.d/neobundle.vim
-" ~/dot_files/conf.d/split.vim
-" ~/dot_files/conf.d/tab.vim
 " ~/dot_files/conf.d/vim-latex.vim
